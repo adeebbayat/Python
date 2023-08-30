@@ -37,9 +37,15 @@ class User:
     def make_deposit(self,amount):
         self.account.deposit(amount)
     
+    def make_withdrawal(self,amount):
+        self.account.withdraw(amount)
+
     def display_user_balance(self):
         print(f"Balance: ${self.account.balance}")
 
+    def transfer_money(self,amount,other_user):
+        self.account.withdraw(amount)
+        other_user.account.deposit(amount)
 
 
 user1 = User("Brad","brad@yahoo.com")
@@ -49,4 +55,6 @@ user1.display_user_balance()
 user2 = User("Chad","chad@yahoo.com")
 user2.make_deposit(200)
 user2.display_user_balance()
-
+user1.transfer_money(100,user2)
+user1.display_user_balance()
+user2.display_user_balance()
