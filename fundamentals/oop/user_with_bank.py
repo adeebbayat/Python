@@ -49,12 +49,12 @@ class User:
 
 
 user1 = User("Brad","brad@yahoo.com")
-user1.make_deposit(200)
-user1.display_user_balance()
+user1.make_deposit(5000)
+
 
 user2 = User("Chad","chad@yahoo.com")
-user2.make_deposit(200)
-user2.display_user_balance()
-user1.transfer_money(100,user2)
+user2.make_deposit(5000)
+
+user1.transfer_money(1000,user2)
 user1.display_user_balance()
 user2.display_user_balance()
