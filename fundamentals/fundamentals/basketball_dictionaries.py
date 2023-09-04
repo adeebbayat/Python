@@ -47,14 +47,6 @@ class Player:
         self.position = players[index]["position"]
         self.team = players[index]["team"]
         
-
-    @classmethod
-    def print_all(cls):
-        for team in cls.new_team:
-            team.display()
-    
-    def display(self):
-        print(self.name)
     
     @classmethod
     def get_team(cls,team_list):

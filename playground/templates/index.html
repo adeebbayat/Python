@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+    <style>
+        h1 {
+            margin-left: 40%;
+
+        
+        }
+        .box{
+            background-color: rgb(159,197,248);
+            min-width: 25px;
+            width:100px;
+            height:100px;
+            background-color:{{color}};
+            border: 3px solid black;
+            
+        }
+        #row{
+            display:flex;
+            justify-content: space-evenly;
+            gap:15px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+        <div id="row">
+            {% for x in range(0,times): %}
+            <div class="box">{{name}}</div>
+            {% endfor %}
+        </div>
+</body>
+</html>
