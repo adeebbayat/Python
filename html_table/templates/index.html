@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        h2,h3{
+            padding:10px 30px 10px 10px;
+            border:1px solid black;
+            margin:0px;
+        }
+        h3{
+            font-weight: 300;
+        }
+        #wholeBox{
+            display:flex;
+            min-width: 700px;
+            margin-left: 15%;
+            margin-top: 50px;
+        }
+        .column{
+        }
+    </style>
+</head>
+<body>
+    <div id="wholeBox">
+        <div class="column">
+            <h2>First Name</h2>
+            <h3>{{users[0]["first_name"]}}</h3>
+            <h3>{{users[1]["first_name"]}}</h3>
+            <h3>{{users[2]["first_name"]}}</h3>
+        </div>
+        <div class="column">
+            <h2>Last Name</h2>
+            <h3>{{users[0]["last_name"]}}</h3>
+            <h3>{{users[1]["last_name"]}}</h3>
+            <h3>{{users[2]["last_name"]}}</h3>
+        </div>
+        <div class="column">
+            <h2>Full Name</h2>
+            <h3>{{users[0]["first_name"]}} {{users[0]["last_name"]}}</h3>
+            <h3>{{users[1]["first_name"]}} {{users[1]["last_name"]}}</h3>
+            <h3>{{users[2]["first_name"]}} {{users[2]["last_name"]}}</h3>
+        </div>
+    </div>
+
+</body>
+</html>
