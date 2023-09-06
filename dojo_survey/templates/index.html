@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <style>
+        #box{
+            border: 3px solid black;
+            margin:100px 100px 0px 100px;
+            padding:40px 30px;
+        }
+        #nameBox, #locationBox, #languageBox{
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+        #nameBox, #locationBox, #languageBox,#commentBox{
+            padding:0px 20px;
+        }
+        p{
+            font-weight: 900;
+            font-size: larger;
+        }
+        #inputBox1,#inputBox2{
+            padding:0px;
+            max-width: 250px;
+            width:250px;
+            height:35px;
+            border:3px solid black;
+            font-size: larger;
+        }
+        #textBox1{
+            padding:0px;
+            max-width: 250px;
+            width:245px;
+            height:30px;
+            border:3px solid black;
+            font-size: larger;
+
+            
+        }
+        #textBox2{
+            width:432px;
+            height:120px;
+            border:3px solid black;
+            
+        }
+        #submitButton{
+            width:100px;
+            height:35px;
+            padding:auto;
+            margin-left: 340px;
+            margin-top: 30px;
+            background-color: rgb(118,165,175);
+            color:white;
+            font-size: large;
+        }
+    </style>
+<body>
+    <div id="box">
+        <div id="nameBox">
+            <p>Your Name:</p>
+            <input id ="textBox1" type="text" name="textBox1">
+        </div>
+        <div id="locationBox" method="post">
+            <p>Dojo Location:</p>
+            <form action="/process">
+                <select id="inputBox1"name="Locations" id="loc">
+                <option value="sanJose">San Jose</option>
+                <option value="not">Not San Jose</option>
+                </select>
+                
+            </form>
+        </div>
+        <div id="languageBox">
+            <p>Favorite Language:</p>
+            <form action="/process" method="post">
+                <select id="inputBox2"name="Language" id="lang">
+                <option value="Python">Python</option>
+                <option value="notPy">Not Python</option>
+                </select>
+                
+            </form>
+        </div>
+        <div id="commentBox">
+            <p>Comment (optional):</p>
+            <input id="textBox2" type="text" name="textBox">
+            <button id = "submitButton" type="submit">Button</button>
+        </div>
+    </div>
+</body>
+</html>
