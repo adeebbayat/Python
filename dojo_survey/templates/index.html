@@ -58,6 +58,7 @@
         }
     </style>
 <body>
+    <form action="/process" method="post">
     <div id="box">
         <div id="nameBox">
             <p>Your Name:</p>
@@ -65,29 +66,35 @@
         </div>
         <div id="locationBox" method="post">
             <p>Dojo Location:</p>
-            <form action="/process">
+            
                 <select id="inputBox1"name="Locations" id="loc">
-                <option value="sanJose">San Jose</option>
-                <option value="not">Not San Jose</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Not San Jose">Not San Jose</option>
                 </select>
                 
-            </form>
         </div>
         <div id="languageBox">
             <p>Favorite Language:</p>
-            <form action="/process" method="post">
+            
                 <select id="inputBox2"name="Language" id="lang">
                 <option value="Python">Python</option>
-                <option value="notPy">Not Python</option>
+                <option value="Not Python">Not Python</option>
                 </select>
-                
-            </form>
+            
         </div>
         <div id="commentBox">
             <p>Comment (optional):</p>
+            
             <input id="textBox2" type="text" name="textBox">
+            
             <button id = "submitButton" type="submit">Button</button>
         </div>
     </div>
+    </form>
 </body>
 </html>
+
+
+
+
+
