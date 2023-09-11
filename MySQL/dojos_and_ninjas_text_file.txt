@@ -1,0 +1,68 @@
+Query: Create 3 new dojos
+
+INSERT INTO dojos (name,created_at,updated_at)
+VALUES ('Ninja Dojo', '2023-09-10','2023-09-10'),
+('Karate Dojo','2023-09-10','2023-09-10'),('Muay Thai Dojo','2023-09-10','2023-09-10')
+
+
+Query: Delete the 3 dojos you just created
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos
+
+
+Query: Create 3 more dojos
+
+INSERT INTO dojos (id,name,created_at,updated_at)
+VALUES ('1','Dojo A', '2023-09-10','2023-09-10'),
+('2','Dojo B','2023-09-10','2023-09-10'),
+('3','Dojo C','2023-09-10','2023-09-10')
+
+Query: Create 3 ninjas that belong to the first dojo
+
+INSERT INTO ninjas (id,first_name,last_name,age,dojo_id,created_at,updated_at)
+VALUES ('1','Kobe','Bryant','40','1','2023-09-10','2023-09-10'),
+('2','Steve','Jobs','60','1','2023-09-10','2023-09-10'),
+('3','Mark','Cuban','62','1','2023-09-10','2023-09-10')
+
+Query: Create 3 ninjas that belong to the second dojo
+
+INSERT INTO ninjas (id,first_name,last_name,age,dojo_id,created_at,updated_at)
+VALUES ('4','Shaq','Oneel','50','2','2023-09-10','2023-09-10'),
+('5','Donald','Trump','75','2','2023-09-10','2023-09-10'),
+('6','Joe','Biden','80','2','2023-09-10','2023-09-10')
+
+Query: Create 3 ninjas that belong to the third dojo
+
+INSERT INTO ninjas (id,first_name,last_name,age,dojo_id,created_at,updated_at)
+VALUES ('7','Kamala','Harris','57','3','2023-09-10','2023-09-10'),
+('8','Hillary','Clinton','68','3','2023-09-10','2023-09-10'),
+('9','Barack','Obama','56','3','2023-09-10','2023-09-10')
+
+Query: Retrieve all the ninjas from the first dojo
+
+SELECT * FROM ninjas
+WHERE dojo_id = '1'
+
+Query: Retrieve all the ninjas from the last dojo
+
+SELECT * FROM ninjas
+WHERE dojo_id = '3'
+
+Query: Retrieve the last ninja's dojo
+
+SELECT dojo_id FROM ninjas
+WHERE id = '9'
+
+Query: Use a JOIN to retrieve the ninja with id 6 as well as the data from its dojo. Be sure to do this in one query using a join statement.
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id 
+WHERE ninjas.id = '6'
+
+
+Query: Use a JOIN to retrieve all the ninjas as well as that ninja's dojo, note, you will see repeated data on dojos as a dojo can have many ninjas!
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id 
+
