@@ -58,16 +58,19 @@
         }
     </style>
 <body>
-    <form action="/process" method="post">
+    
+
+
+    <form action="/create" method="post">
     <div id="box">
         <div id="nameBox">
             <p>Your Name:</p>
-            <input id ="textBox1" type="text" name="textBox1">
+            <input id ="textBox1" type="text" name="name">
         </div>
         <div id="locationBox" method="post">
             <p>Dojo Location:</p>
             
-                <select id="inputBox1"name="Locations" id="loc">
+                <select id="inputBox1"name="location" id="loc">
                 <option value="San Jose">San Jose</option>
                 <option value="Not San Jose">Not San Jose</option>
                 </select>
@@ -76,7 +79,7 @@
         <div id="languageBox">
             <p>Favorite Language:</p>
             
-                <select id="inputBox2"name="Language" id="lang">
+                <select id="inputBox2"name="language" id="lang">
                 <option value="Python">Python</option>
                 <option value="Not Python">Not Python</option>
                 </select>
@@ -85,12 +88,19 @@
         <div id="commentBox">
             <p>Comment (optional):</p>
             
-            <input id="textBox2" type="text" name="textBox">
+            <input id="textBox2" type="text" name="comment">
             
             <button id = "submitButton" type="submit">Button</button>
         </div>
     </div>
     </form>
+    {% with messages = get_flashed_messages() %}<!-- declare a variable called messages -->
+    {% if messages %}<!-- check if there are any messages -->
+    {% for message in messages %}<!-- loop through the messages -->
+        <p>{{message}}</p><!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+{% endwith %}
 </body>
 </html>
 
